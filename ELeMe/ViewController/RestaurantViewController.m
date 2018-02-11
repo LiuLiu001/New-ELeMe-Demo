@@ -29,6 +29,7 @@ UIGestureRecognizerDelegate
     NSInteger foodCount;
     NSMutableArray *selectedFoodArray;
     
+    BOOL isFromFirstPage;
 }
 
 @end
@@ -41,6 +42,7 @@ UIGestureRecognizerDelegate
     foodArray = [[NSMutableArray alloc]init];
     ScreenWidth = [UIScreen mainScreen].bounds.size.width;
     ScreenHeight = [UIScreen mainScreen].bounds.size.height;
+    isFromFirstPage = YES;
     
     [self.mainScrollerView setContentSize:CGSizeMake(ScreenWidth * (self.curRestaurant.foodArray.count + 1), 0)];
     self.mainScrollerView.showsVerticalScrollIndicator = NO;
@@ -162,6 +164,7 @@ UIGestureRecognizerDelegate
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - ScrollerView Delegate
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
     if (scrollView.tag == 1) {
         if (scrollView.contentOffset.x != 0 && scrollView.contentOffset.x > 0) {
@@ -170,22 +173,52 @@ UIGestureRecognizerDelegate
             self.priceLable.hidden = NO;
             self.addButton.hidden = NO;
             self.shoppingCartButton.hidden = NO;
-//            self.addView.hidden = NO;
+            if (isFromFirstPage) {
+                self.nameLabel.alpha = 0.1;
+                self.signLabel.alpha = 0.1;
+                self.priceLable.alpha = 0.1;
+                self.addButton.alpha = 0.1;
+                self.shoppingCartButton.alpha = 0.1;
+                [UIView animateWithDuration:0.25 animations:^{
+                    self.nameLabel.alpha = 1;
+                    self.signLabel.alpha = 1;
+                    self.priceLable.alpha = 1;
+                    self.addButton.alpha = 1;
+                    self.shoppingCartButton.alpha = 1;
+                } completion:^(BOOL finished) {
+                    
+                }];
+            }
+            
             NSInteger index = scrollView.contentOffset.x / ScreenWidth;
             Food *curFood = foodArray[index - 1];
             self.nameLabel.text = curFood.foodName;
             self.priceLable.text = [curFood.foodPrice stringValue];
+            
+            isFromFirstPage = NO;
         }else{
             self.nameLabel.hidden = YES;
             self.signLabel.hidden = YES;
             self.priceLable.hidden = YES;
             self.addButton.hidden = YES;
             self.shoppingCartButton.hidden = YES;
+            
+            isFromFirstPage = YES;
 //            self.addView.hidden = YES;
         }
     }
+    
 }
 
+-(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    if (scrollView.tag == 4) {
+        
+        NSLog(@"%f",scrollView.contentOffset.y);
+        if (scrollView.contentOffset.y < - 50) {
+            [self hideShopping];
+        }
+    }
+}
 #pragma mark - Tableview Delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (tableView.tag == 3) {
@@ -196,7 +229,7 @@ UIGestureRecognizerDelegate
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (tableView.tag == 0) {
+    if (tableView.tag == 4) {
         Food *curFood = (Food *)foodArray[indexPath.row];
         FoodInfoTableViewCell *foodCell = [tableView dequeueReusableCellWithIdentifier:@"FoodInfoTableViewCell"];
         [foodCell.foodImageView setImage:[UIImage imageNamed:curFood.foodMinImage]];
@@ -243,7 +276,7 @@ UIGestureRecognizerDelegate
         self.commentViewTopConstraint.constant = -ScreenHeight;
         [self.view layoutIfNeeded];
     } completion:^(BOOL finished) {
-        
+        self.coverView.hidden = NO;
     }];
     if (isComment) {
         [self.commentButton setImage:[UIImage imageNamed:@"comment"] forState:UIControlStateNormal];
@@ -275,6 +308,7 @@ UIGestureRecognizerDelegate
 - (IBAction)shoppingCartButtonAction:(id)sender {
     self.shoppingSubmitView.hidden = NO;
     [[MJPopTool sharedInstance] popView:self.shoppingSubmitView animated:YES];
+    self.mainCoverView.hidden = NO;
 }
 
 - (IBAction)subNumButtonAction:(id)sender {
@@ -291,9 +325,11 @@ UIGestureRecognizerDelegate
 
 - (IBAction)payAction:(id)sender {
     [[MJPopTool sharedInstance] closeAnimated:YES];
+    self.mainCoverView.hidden = YES;
 }
 
 - (IBAction)closeCommentButtonAction:(id)sender {
+    self.coverView.hidden = YES;
     [UIView animateWithDuration:0.25 animations:^{
         self.commentViewTopConstraint.constant = 0;
         [self.view layoutIfNeeded];
@@ -305,6 +341,8 @@ UIGestureRecognizerDelegate
 - (void)showShopping{
     [UIView animateWithDuration:0.25 animations:^{
         self.shoppingTopConstraint.constant = ScreenHeight;
+        self.mainScollerViewBottomConstraint.constant = ScreenHeight * 0.3;
+        self.mainScollerViewTopConstraint.constant -= ScreenHeight * 0.3;
         [self.view layoutIfNeeded];
     } completion:^(BOOL finished) {
         
@@ -314,6 +352,8 @@ UIGestureRecognizerDelegate
 - (void)hideShopping{
     [UIView animateWithDuration:0.25 animations:^{
         self.shoppingTopConstraint.constant = 0;
+        self.mainScollerViewBottomConstraint.constant = 0;
+        self.mainScollerViewTopConstraint.constant = -40;
         [self.view layoutIfNeeded];
     } completion:^(BOOL finished) {
         

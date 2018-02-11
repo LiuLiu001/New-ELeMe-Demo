@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A4058A9020300D85005CA3BE /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4058A8F20300D85005CA3BE /* CommentTableViewCell.m */; };
+		A43AA04120308F0200039495 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A43AA04020308F0100039495 /* Assets.xcassets */; };
 		A478A2B7202608990035CBD6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A478A2B6202608990035CBD6 /* AppDelegate.m */; };
 		A478A2BD202608990035CBD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A478A2BB202608990035CBD6 /* Main.storyboard */; };
-		A478A2BF202608990035CBD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A478A2BE202608990035CBD6 /* Assets.xcassets */; };
 		A478A2C2202608990035CBD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A478A2C0202608990035CBD6 /* LaunchScreen.storyboard */; };
 		A478A2C5202608990035CBD6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A478A2C4202608990035CBD6 /* main.m */; };
 		A478A2CF2026089A0035CBD6 /* ELeMeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A478A2CE2026089A0035CBD6 /* ELeMeTests.m */; };
@@ -46,11 +46,11 @@
 /* Begin PBXFileReference section */
 		A4058A8E20300D85005CA3BE /* CommentTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentTableViewCell.h; sourceTree = "<group>"; };
 		A4058A8F20300D85005CA3BE /* CommentTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentTableViewCell.m; sourceTree = "<group>"; };
+		A43AA04020308F0100039495 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 		A478A2B2202608990035CBD6 /* ELeMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ELeMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A478A2B5202608990035CBD6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A478A2B6202608990035CBD6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A478A2BC202608990035CBD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A478A2BE202608990035CBD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A478A2C1202608990035CBD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A478A2C3202608990035CBD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A478A2C4202608990035CBD6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -134,10 +134,10 @@
 				A478A2B5202608990035CBD6 /* AppDelegate.h */,
 				A478A2B6202608990035CBD6 /* AppDelegate.m */,
 				A478A2BB202608990035CBD6 /* Main.storyboard */,
-				A478A2BE202608990035CBD6 /* Assets.xcassets */,
 				A478A2C0202608990035CBD6 /* LaunchScreen.storyboard */,
 				A478A2C3202608990035CBD6 /* Info.plist */,
 				A478A2C4202608990035CBD6 /* main.m */,
+				A43AA04020308F0100039495 /* Assets.xcassets */,
 			);
 			path = ELeMe;
 			sourceTree = "<group>";
@@ -315,7 +315,7 @@
 			files = (
 				A478A2C2202608990035CBD6 /* LaunchScreen.storyboard in Resources */,
 				A478A2F12027F89C0035CBD6 /* RestaurantDataList.plist in Resources */,
-				A478A2BF202608990035CBD6 /* Assets.xcassets in Resources */,
+				A43AA04120308F0200039495 /* Assets.xcassets in Resources */,
 				A478A2BD202608990035CBD6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

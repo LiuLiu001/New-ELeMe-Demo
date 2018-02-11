@@ -36,6 +36,8 @@
 @property (weak, nonatomic) IBOutlet UIView *commentListView;
 @property (weak, nonatomic) IBOutlet UITextField *commentTextField;
 @property (weak, nonatomic) IBOutlet UIView *coverView;
+@property (weak, nonatomic) IBOutlet UIView *mainCoverView;
+
 
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *shoppingDetailHeightConstraint;
@@ -45,6 +47,8 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *commentViewTopConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *writeViewBottomConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *commentListTopConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *mainScollerViewBottomConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *mainScollerViewTopConstraint;
 
 @property (strong, nonatomic) Restaurant *curRestaurant;
 @end
