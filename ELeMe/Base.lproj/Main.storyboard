@@ -451,7 +451,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sales" translatesAutoresizingMaskIntoConstraints="NO" id="HjM-wp-6sB">
-                                                        <rect key="frame" x="134" y="61.5" width="12" height="12"/>
+                                                        <rect key="frame" x="133" y="61" width="13" height="13"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="折扣信息" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0g-Oh-18Q">
                                                         <rect key="frame" x="149" y="59.5" width="53.5" height="16"/>
@@ -685,7 +685,7 @@
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" tag="2" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aVI-mZ-DhW">
-                                        <rect key="frame" x="15" y="70" width="305" height="210"/>
+                                        <rect key="frame" x="15" y="70" width="305" height="220"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FoodInfoTableViewCell" id="thc-Nc-hVs" customClass="FoodInfoTableViewCell">
@@ -776,16 +776,16 @@
                                         </connections>
                                     </tableView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sales" translatesAutoresizingMaskIntoConstraints="NO" id="FHL-7d-vS6">
-                                        <rect key="frame" x="20" y="295" width="12" height="12"/>
+                                        <rect key="frame" x="20" y="305" width="13" height="13"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="全场满500减50" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i11-NW-L9d">
-                                        <rect key="frame" x="35" y="294.5" width="80" height="13.5"/>
+                                        <rect key="frame" x="36" y="305" width="80" height="13.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-￥50.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z89-Ur-19z">
-                                        <rect key="frame" x="251.5" y="292.5" width="63.5" height="18"/>
+                                        <rect key="frame" x="251.5" y="303" width="63.5" height="18"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
                                         <color key="textColor" red="1" green="0.35854948850000001" blue="0.45390785970000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -837,7 +837,7 @@
                                     <constraint firstItem="FHL-7d-vS6" firstAttribute="centerY" secondItem="i11-NW-L9d" secondAttribute="centerY" id="2mi-Lz-64S"/>
                                     <constraint firstAttribute="trailing" secondItem="aVI-mZ-DhW" secondAttribute="trailing" constant="15" id="4kB-VQ-Mgn"/>
                                     <constraint firstItem="z89-Ur-19z" firstAttribute="centerY" secondItem="FHL-7d-vS6" secondAttribute="centerY" id="4rW-KS-n67"/>
-                                    <constraint firstAttribute="bottom" secondItem="aVI-mZ-DhW" secondAttribute="bottom" constant="170" id="6KM-Ay-hnH"/>
+                                    <constraint firstAttribute="bottom" secondItem="aVI-mZ-DhW" secondAttribute="bottom" constant="160" id="6KM-Ay-hnH"/>
                                     <constraint firstItem="nXj-wL-arS" firstAttribute="leading" secondItem="QeX-Gm-f2Q" secondAttribute="trailing" id="FgK-cp-YQv"/>
                                     <constraint firstAttribute="trailing" secondItem="nXj-wL-arS" secondAttribute="trailing" id="HyV-sX-5P2"/>
                                     <constraint firstItem="sFN-qQ-3jV" firstAttribute="leading" secondItem="j7A-xv-0zz" secondAttribute="leading" constant="15" id="OJF-HF-ina"/>
@@ -1143,7 +1143,7 @@
         <image name="minM" width="21" height="21"/>
         <image name="resBgBottom" width="375" height="60"/>
         <image name="resTopBG" width="375" height="215"/>
-        <image name="sales" width="12" height="12"/>
+        <image name="sales" width="13" height="13"/>
         <image name="search" width="22" height="23"/>
         <image name="shoppingCart" width="50" height="50"/>
         <image name="smallHeart" width="19" height="17"/>

@@ -212,10 +212,15 @@ UIGestureRecognizerDelegate
 
 -(void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
     if (scrollView.tag == 4) {
-        
         NSLog(@"%f",scrollView.contentOffset.y);
         if (scrollView.contentOffset.y < - 50) {
             [self hideShopping];
+        }
+    }
+    if (scrollView.tag == 3) {
+        NSLog(@"%f",scrollView.contentOffset.y);
+        if (scrollView.contentOffset.y < - 50) {
+            [self closeCommentButtonAction:nil];
         }
     }
 }
